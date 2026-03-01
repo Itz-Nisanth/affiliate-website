@@ -1,17 +1,47 @@
+# 🛍️ Affiliate Website – AI-Powered Amazon Affiliate Platform
 
-# Run and deploy your AI Studio app
+Affiliate Website is a modern, high-performance **React + Vite + TypeScript** app designed for Amazon affiliate marketing. It integrates with **Google Gemini AI** to generate smart product insights and dynamic content — perfect for SEO, conversions, and monetization.
 
-This contains everything you need to run your app locally.
+---
 
-View your app in AI Studio: https://ai.studio/apps/3a2918df-06e6-424e-9b27-ef3f2fe9e96c
+## 🚀 Features
 
-## Run Locally
+✨ Built with Vite + React + TypeScript  
+🤖 Google Gemini AI for product intelligence  
+⚡ Blazing fast performance  
+🎨 TailwindCSS for responsive UI  
+🔌 Modular & scalable code structure  
+🔐 Uses environment variables for secure API keys  
+📈 Optimized for Amazon affiliate conversions
 
-**Prerequisites:**  Node.js
+---
 
+## 🧰 Tech Stack
 
-1. Install dependencies:
-   `npm install --legacy-peer-deps`
-2. Set the `GEMINI_API_KEY` in [.env.local](.env.local) to your Gemini API key
-3. Run the app:
-   `npm run dev`
+| Technology | Purpose |
+|------------|---------|
+| React | UI Library |
+| Vite | Dev Server & Build Tool |
+| TypeScript | Type Safety |
+| TailwindCSS | Utility-First CSS |
+| Google Gemini API | AI Content |
+| SQLite / better-sqlite3 | Local DB |
+
+---
+
+## 📥 Getting Started
+
+### 💡 Prerequisites
+
+✔ Node.js (v18+ recommended)  
+✔ NPM (comes with Node)
+
+---
+
+### 📦 Install Dependencies
+
+1. Open terminal in the project root:
+
+```bash
+npm install --legacy-peer-deps
+npm run dev
