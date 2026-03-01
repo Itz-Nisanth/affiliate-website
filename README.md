@@ -43,5 +43,5 @@ Affiliate Website is a modern, high-performance **React + Vite + TypeScript** ap
 1. Open terminal in the project root:
 
 ```bash
-npm install --legacy-peer-deps
+npm install
 npm run dev
