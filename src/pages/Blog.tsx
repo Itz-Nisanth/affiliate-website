@@ -9,15 +9,16 @@ export default function Blog() {
   return (
     <div className="pt-20 bg-slate-50 min-h-screen">
       <Helmet>
-        <title>Expert Buying Guides & Tech News | AffiliatePro Blog</title>
-        <meta name="description" content="Stay updated with the latest tech news, in-depth buying guides, and expert tips to help you make smarter purchasing decisions." />
+        <title>Tech Insights & Expert Buying Guides | AffiliatePro Blog</title>
+        <meta name="description" content="Stay updated with the latest tech news, in-depth buying guides, and expert tips to help you make smarter purchasing decisions in 2026." />
+        <meta name="keywords" content="tech blog, gadget news, buying guides 2026, electronics reviews" />
       </Helmet>
 
       {/* Hero */}
       <section className="py-20 px-4 bg-white border-b border-slate-100">
         <div className="max-w-7xl mx-auto text-center">
           <h1 className="text-4xl md:text-6xl font-black text-slate-900 mb-6 tracking-tight">
-            The <span className="text-indigo-600">AffiliatePro</span> Blog
+            The <span className="text-brand-primary">AffiliatePro</span> Blog
           </h1>
           <p className="text-xl text-slate-600 max-w-2xl mx-auto leading-relaxed">
             Expert insights, buying guides, and the latest tech trends to help you navigate the world of consumer electronics.
@@ -44,7 +45,7 @@ export default function Blog() {
                     className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
                     referrerPolicy="no-referrer"
                   />
-                  <div className="absolute top-4 left-4 bg-indigo-600 text-white px-3 py-1 rounded-full text-[10px] font-bold uppercase tracking-wider">
+                  <div className="absolute top-4 left-4 bg-brand-accent text-brand-primary px-3 py-1 rounded-full text-[10px] font-bold uppercase tracking-wider">
                     {post.category}
                   </div>
                 </Link>
@@ -59,13 +60,13 @@ export default function Blog() {
                       <span>{post.author}</span>
                     </div>
                   </div>
-                  <h2 className="text-2xl font-black text-slate-900 mb-4 group-hover:text-indigo-600 transition-colors leading-tight">
+                  <h2 className="text-2xl font-black text-slate-900 mb-4 group-hover:text-brand-primary transition-colors leading-tight">
                     <Link to={`/blog/${post.slug}`}>{post.title}</Link>
                   </h2>
                   <p className="text-slate-600 mb-6 line-clamp-3 text-sm leading-relaxed">
                     {post.excerpt}
                   </p>
-                  <Link to={`/blog/${post.slug}`} className="text-indigo-600 font-bold flex items-center gap-2 group-hover:gap-3 transition-all">
+                  <Link to={`/blog/${post.slug}`} className="text-brand-primary font-bold flex items-center gap-2 group-hover:gap-3 transition-all">
                     Read Full Article <ArrowRight size={18} />
                   </Link>
                 </div>

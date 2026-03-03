@@ -32,7 +32,7 @@ export default function Sitemap() {
               <ul className="space-y-4">
                 {pages.map(page => (
                   <li key={page.path}>
-                    <Link to={page.path} className="text-slate-600 hover:text-indigo-600 transition-colors font-medium">{page.name}</Link>
+                    <Link to={page.path} className="text-slate-600 hover:text-brand-primary transition-colors font-medium">{page.name}</Link>
                   </li>
                 ))}
               </ul>
@@ -43,7 +43,7 @@ export default function Sitemap() {
               <ul className="space-y-4">
                 {PRODUCTS.map(product => (
                   <li key={product.id}>
-                    <Link to={`/reviews/${product.slug}`} className="text-slate-600 hover:text-indigo-600 transition-colors font-medium">{product.title}</Link>
+                    <Link to={`/reviews/${product.slug}`} className="text-slate-600 hover:text-brand-primary transition-colors font-medium">{product.title}</Link>
                   </li>
                 ))}
               </ul>
@@ -52,7 +52,7 @@ export default function Sitemap() {
               <ul className="space-y-4">
                 {BLOG_POSTS.map(post => (
                   <li key={post.id}>
-                    <Link to={`/blog/${post.slug}`} className="text-slate-600 hover:text-indigo-600 transition-colors font-medium">{post.title}</Link>
+                    <Link to={`/blog/${post.slug}`} className="text-slate-600 hover:text-brand-primary transition-colors font-medium">{post.title}</Link>
                   </li>
                 ))}
               </ul>

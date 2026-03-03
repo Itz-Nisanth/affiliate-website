@@ -14,7 +14,7 @@ export default function BlogPostDetail() {
     return (
       <div className="pt-32 pb-24 px-4 text-center">
         <h1 className="text-4xl font-black text-slate-900 mb-6">Article Not Found</h1>
-        <Link to="/blog" className="text-indigo-600 font-bold hover:underline">Back to Blog</Link>
+        <Link to="/blog" className="text-brand-primary font-bold hover:underline">Back to Blog</Link>
       </div>
     );
   }
@@ -24,19 +24,25 @@ export default function BlogPostDetail() {
   return (
     <div className="pt-20 bg-white min-h-screen">
       <Helmet>
-        <title>{post.title} | AffiliatePro Blog</title>
+        <title>{post.title} | AffiliatePro Tech Insights</title>
         <meta name="description" content={post.excerpt} />
+        <meta name="author" content={post.author} />
+        <meta property="og:title" content={post.title} />
+        <meta property="og:description" content={post.excerpt} />
+        <meta property="og:image" content={post.imageUrl} />
+        <meta property="og:type" content="article" />
+        <meta name="twitter:card" content="summary_large_image" />
       </Helmet>
 
       {/* Article Header */}
       <header className="py-24 px-4 bg-slate-50 border-b border-slate-100">
         <div className="max-w-4xl mx-auto">
-          <Link to="/blog" className="inline-flex items-center gap-2 text-indigo-600 font-bold mb-8 hover:gap-3 transition-all">
+          <Link to="/blog" className="inline-flex items-center gap-2 text-brand-accent font-bold mb-8 hover:gap-3 transition-all">
             <ArrowLeft size={20} />
             Back to Blog
           </Link>
           <div className="flex items-center gap-3 mb-6">
-            <span className="bg-indigo-600 text-white px-3 py-1 rounded-full text-xs font-black uppercase tracking-widest">
+            <span className="bg-brand-accent text-white px-3 py-1 rounded-full text-xs font-black uppercase tracking-widest">
               {post.category}
             </span>
             <span className="text-slate-400 text-sm font-medium flex items-center gap-1">
@@ -47,17 +53,17 @@ export default function BlogPostDetail() {
           <h1 className="text-4xl md:text-6xl font-black text-slate-900 mb-8 leading-tight tracking-tight">
             {post.title}
           </h1>
-          <div className="flex items-center justify-between py-8 border-t border-slate-200">
+          <div className="flex items-center justify-between py-8 border-t border-brand-primary/10">
             <div className="flex items-center gap-4">
-              <img src={`https://picsum.photos/seed/${post.author}/100/100`} className="w-12 h-12 rounded-full" alt={post.author} />
+              <img src={`https://picsum.photos/seed/${post.author}/100/100`} className="w-12 h-12 rounded-full border-2 border-brand-accent/20" alt={post.author} />
               <div>
-                <div className="text-slate-900 font-bold">{post.author}</div>
+                <div className="text-brand-primary font-bold">{post.author}</div>
                 <div className="text-slate-500 text-sm">Editorial Team</div>
               </div>
             </div>
             <div className="flex gap-4">
-              <button className="p-2 text-slate-400 hover:text-indigo-600 transition-colors"><Share2 size={20} /></button>
-              <button className="p-2 text-slate-400 hover:text-indigo-600 transition-colors"><Bookmark size={20} /></button>
+              <button className="p-2 text-slate-400 hover:text-brand-accent transition-colors"><Share2 size={20} /></button>
+              <button className="p-2 text-slate-400 hover:text-brand-accent transition-colors"><Bookmark size={20} /></button>
             </div>
           </div>
         </div>
@@ -83,7 +89,7 @@ export default function BlogPostDetail() {
           <div className="mt-16 pt-8 border-t border-slate-100 flex flex-wrap gap-2">
             <span className="text-sm font-bold text-slate-400 uppercase tracking-widest mr-2">Tags:</span>
             {['Technology', 'Reviews', 'Buying Guide', post.category].map(tag => (
-              <span key={tag} className="bg-slate-50 text-slate-600 px-4 py-1.5 rounded-full text-sm font-medium hover:bg-indigo-50 hover:text-indigo-600 transition-colors cursor-pointer">
+              <span key={tag} className="bg-slate-50 text-slate-600 px-4 py-1.5 rounded-full text-sm font-medium hover:bg-brand-secondary hover:text-brand-primary transition-colors cursor-pointer">
                 #{tag}
               </span>
             ))}
@@ -103,8 +109,8 @@ export default function BlogPostDetail() {
                     <img src={related.imageUrl} className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" alt={related.title} referrerPolicy="no-referrer" />
                   </div>
                   <div className="p-8 flex-grow">
-                    <div className="text-xs font-black text-indigo-600 uppercase tracking-widest mb-3">{related.category}</div>
-                    <h3 className="text-xl font-black text-slate-900 mb-4 group-hover:text-indigo-600 transition-colors leading-tight">
+                    <div className="text-xs font-black text-brand-primary uppercase tracking-widest mb-3">{related.category}</div>
+                    <h3 className="text-xl font-black text-slate-900 mb-4 group-hover:text-brand-primary transition-colors leading-tight">
                       {related.title}
                     </h3>
                     <p className="text-slate-500 text-sm line-clamp-2">{related.excerpt}</p>
@@ -118,21 +124,21 @@ export default function BlogPostDetail() {
 
       {/* Newsletter Mini */}
       <section className="py-24 px-4">
-        <div className="max-w-4xl mx-auto bg-indigo-600 rounded-[3rem] p-12 md:p-16 text-center text-white relative overflow-hidden">
-          <div className="absolute top-0 right-0 w-64 h-64 bg-white/10 rounded-full blur-3xl -mr-32 -mt-32" />
+        <div className="max-w-4xl mx-auto bg-brand-primary rounded-[3rem] p-12 md:p-16 text-center text-white relative overflow-hidden">
+          <div className="absolute top-0 right-0 w-64 h-64 bg-brand-accent/10 rounded-full blur-3xl -mr-32 -mt-32" />
           <div className="relative z-10">
-            <MessageCircle size={48} className="mx-auto mb-8 opacity-50" />
+            <MessageCircle size={48} className="mx-auto mb-8 opacity-50 text-brand-accent" />
             <h2 className="text-3xl md:text-4xl font-black mb-6">Never Miss an Update</h2>
-            <p className="text-indigo-100 text-lg mb-10 max-w-xl mx-auto">
+            <p className="text-brand-secondary/80 text-lg mb-10 max-w-xl mx-auto">
               Get our latest reviews and tech guides delivered straight to your inbox every week.
             </p>
             <form className="flex flex-col sm:flex-row gap-4 max-w-md mx-auto">
               <input 
                 type="email" 
                 placeholder="Enter your email" 
-                className="flex-grow bg-white/10 border border-white/20 rounded-2xl py-4 px-6 text-white placeholder:text-indigo-200 focus:outline-none focus:ring-2 focus:ring-white/50 transition-all"
+                className="flex-grow bg-white/10 border border-white/20 rounded-2xl py-4 px-6 text-white placeholder:text-brand-secondary/60 focus:outline-none focus:ring-2 focus:ring-brand-accent transition-all"
               />
-              <button className="bg-white text-indigo-600 px-8 py-4 rounded-2xl font-black hover:bg-indigo-50 transition-all active:scale-95">
+              <button className="bg-brand-accent text-white px-8 py-4 rounded-2xl font-black hover:bg-white hover:text-brand-primary transition-all active:scale-95">
                 Subscribe
               </button>
             </form>

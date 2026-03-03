@@ -3,6 +3,7 @@ import { BrowserRouter as Router, Routes, Route, useLocation } from 'react-route
 import { HelmetProvider } from 'react-helmet-async';
 import Navbar from '@/src/components/Navbar';
 import Footer from '@/src/components/Footer';
+import CustomCursor from '@/src/components/CustomCursor';
 import Home from '@/src/pages/Home';
 import ProductReview from '@/src/pages/ProductReview';
 import Blog from '@/src/pages/Blog';
@@ -28,10 +29,10 @@ function ScrollToTop() {
 const PageWrapper = ({ children }: { children: React.ReactNode }) => {
   return (
     <motion.div
-      initial={{ opacity: 0 }}
-      animate={{ opacity: 1 }}
-      exit={{ opacity: 0 }}
-      transition={{ duration: 0.3 }}
+      initial={{ opacity: 0, y: 20 }}
+      animate={{ opacity: 1, y: 0 }}
+      exit={{ opacity: 0, y: -20 }}
+      transition={{ duration: 0.6, ease: [0.22, 1, 0.36, 1] }}
     >
       {children}
     </motion.div>
@@ -43,7 +44,8 @@ export default function App() {
     <HelmetProvider>
       <Router>
         <ScrollToTop />
-        <div className="flex flex-col min-h-screen font-sans text-slate-900 selection:bg-indigo-100 selection:text-indigo-900">
+        <div className="flex flex-col min-h-screen font-sans text-slate-900 selection:bg-brand-secondary selection:text-brand-primary">
+          <CustomCursor />
           <Navbar />
           <main className="flex-grow">
             <AnimatePresence mode="wait">

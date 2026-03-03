@@ -18,14 +18,14 @@ export default function Top10Article() {
       </Helmet>
 
       {/* Editorial Hero */}
-      <section className="relative h-screen flex items-center justify-center overflow-hidden bg-slate-900 text-white px-4">
-        <div className="absolute inset-0 opacity-40">
+      <section className="relative h-screen flex items-center justify-center overflow-hidden bg-brand-primary text-white px-4">
+        <div className="absolute inset-0 opacity-20">
           <img 
             src="https://images.unsplash.com/photo-1550745165-9bc0b252726f?auto=format&fit=crop&q=80&w=2000" 
             className="w-full h-full object-cover"
             alt="Tech Background"
           />
-          <div className="absolute inset-0 bg-gradient-to-b from-slate-900/20 via-slate-900/60 to-slate-900" />
+          <div className="absolute inset-0 bg-gradient-to-b from-brand-primary/20 via-brand-primary/60 to-brand-primary" />
         </div>
         
         <div className="relative z-10 max-w-5xl mx-auto text-center">
@@ -34,13 +34,13 @@ export default function Top10Article() {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8 }}
           >
-            <div className="inline-flex items-center gap-2 bg-indigo-600 text-white px-6 py-2 rounded-full text-sm font-black uppercase tracking-[0.2em] mb-8 shadow-2xl">
+            <div className="inline-flex items-center gap-2 bg-brand-accent text-white px-6 py-2 rounded-full text-sm font-black uppercase tracking-[0.2em] mb-8 shadow-2xl">
               <Award size={18} />
               <span>2026 Editorial Choice</span>
             </div>
             <h1 className="text-6xl md:text-[120px] font-black leading-[0.85] tracking-tighter mb-12 uppercase">
-              The <span className="text-indigo-500">Ten</span> <br />
-              Best <span className="italic font-serif lowercase text-slate-400">of</span> 2026
+              The <span className="text-brand-accent">Ten</span> <br />
+              Best <span className="italic font-serif lowercase text-brand-secondary/60">of</span> 2026
             </h1>
             <p className="text-xl md:text-2xl text-slate-300 max-w-2xl mx-auto leading-relaxed font-medium">
               After 500+ hours of rigorous testing, our editors have selected the definitive gadgets that define this year.
@@ -49,7 +49,7 @@ export default function Top10Article() {
         </div>
 
         <div className="absolute bottom-12 left-1/2 -translate-x-1/2 animate-bounce">
-          <div className="w-1 h-12 bg-gradient-to-b from-indigo-500 to-transparent rounded-full" />
+          <div className="w-1 h-12 bg-gradient-to-b from-brand-primary to-transparent rounded-full" />
         </div>
       </section>
 
@@ -66,7 +66,7 @@ export default function Top10Article() {
               id={`rank-${index + 1}`}
             >
               {/* Oversized Number Background */}
-              <div className="absolute -top-24 -left-12 md:-left-24 text-[200px] md:text-[350px] font-black text-slate-50 select-none pointer-events-none leading-none z-0">
+              <div className="absolute -top-24 -left-12 md:-left-24 text-[200px] md:text-[350px] font-black text-brand-primary/5 select-none pointer-events-none leading-none z-0">
                 {String(index + 1).padStart(2, '0')}
               </div>
 
@@ -90,7 +90,7 @@ export default function Top10Article() {
                         href={cloakLink(product.amazonUrl)} 
                         target="_blank" 
                         rel="noopener noreferrer"
-                        className="bg-indigo-600 text-white p-6 rounded-2xl shadow-xl hover:bg-indigo-700 transition-all"
+                        className="bg-brand-primary text-white p-6 rounded-2xl shadow-xl hover:bg-brand-accent transition-all"
                       >
                         <ShoppingCart size={24} />
                       </a>
@@ -100,7 +100,7 @@ export default function Top10Article() {
 
                 {/* Product Info Side */}
                 <div className="lg:col-span-5 pt-8">
-                  <div className="inline-flex items-center gap-2 text-indigo-600 font-black uppercase tracking-widest text-xs mb-4">
+                  <div className="inline-flex items-center gap-2 text-brand-primary font-black uppercase tracking-widest text-xs mb-4">
                     <Zap size={14} />
                     <span>Ranked #{index + 1} in {product.category}</span>
                   </div>
@@ -125,13 +125,13 @@ export default function Top10Article() {
                   <div className="grid grid-cols-1 gap-4 mb-8">
                     <div className="bg-slate-50 p-6 rounded-3xl border border-slate-100">
                       <h4 className="font-bold text-slate-900 mb-4 flex items-center gap-2">
-                        <Info size={18} className="text-indigo-600" />
+                        <Info size={18} className="text-brand-primary" />
                         Why It Made The List
                       </h4>
                       <ul className="space-y-3">
                         {product.pros.map((pro, i) => (
                           <li key={i} className="flex gap-3 text-sm text-slate-600 font-medium">
-                            <Check size={16} className="text-emerald-500 shrink-0 mt-0.5" />
+                            <Check size={16} className="text-brand-accent shrink-0 mt-0.5" />
                             {pro}
                           </li>
                         ))}
@@ -144,14 +144,14 @@ export default function Top10Article() {
                       href={cloakLink(product.amazonUrl)} 
                       target="_blank" 
                       rel="noopener noreferrer"
-                      className="flex-1 bg-slate-900 text-white py-5 rounded-2xl font-bold flex items-center justify-center gap-2 hover:bg-indigo-600 transition-all shadow-xl active:scale-95"
+                      className="flex-1 bg-slate-900 text-white py-5 rounded-2xl font-bold flex items-center justify-center gap-2 hover:bg-brand-primary transition-all shadow-xl active:scale-95"
                     >
                       Buy on Amazon
                       <ArrowRight size={20} />
                     </a>
                     <Link 
                       to={`/reviews/${product.slug}`}
-                      className="flex-1 bg-white border-2 border-slate-100 text-slate-900 py-5 rounded-2xl font-bold flex items-center justify-center gap-2 hover:border-indigo-600 hover:text-indigo-600 transition-all"
+                      className="flex-1 bg-white border-2 border-slate-100 text-slate-900 py-5 rounded-2xl font-bold flex items-center justify-center gap-2 hover:border-brand-primary hover:text-brand-primary transition-all"
                     >
                       Read Full Review
                     </Link>
@@ -172,15 +172,15 @@ export default function Top10Article() {
           </p>
           <div className="flex justify-center gap-8">
             <div className="text-center">
-              <div className="text-4xl font-black text-indigo-600 mb-2">500+</div>
+              <div className="text-4xl font-black text-brand-accent mb-2">500+</div>
               <div className="text-xs font-bold text-slate-400 uppercase tracking-widest">Hours Testing</div>
             </div>
             <div className="text-center">
-              <div className="text-4xl font-black text-indigo-600 mb-2">100%</div>
+              <div className="text-4xl font-black text-brand-accent mb-2">100%</div>
               <div className="text-xs font-bold text-slate-400 uppercase tracking-widest">Unbiased</div>
             </div>
             <div className="text-center">
-              <div className="text-4xl font-black text-indigo-600 mb-2">2026</div>
+              <div className="text-4xl font-black text-brand-accent mb-2">2026</div>
               <div className="text-xs font-bold text-slate-400 uppercase tracking-widest">Current Tech</div>
             </div>
           </div>

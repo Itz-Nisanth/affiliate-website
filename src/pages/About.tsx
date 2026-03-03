@@ -16,7 +16,7 @@ export default function About() {
         <div className="max-w-4xl mx-auto text-center">
           <h1 className="text-4xl md:text-6xl font-black text-slate-900 mb-8 tracking-tight">
             Our Mission is <br />
-            <span className="text-indigo-600">Transparency.</span>
+            <span className="text-brand-primary">Transparency.</span>
           </h1>
           <p className="text-xl text-slate-600 leading-relaxed">
             AffiliatePro was founded in 2024 with a simple goal: to provide the most honest, in-depth, and unbiased product reviews on the internet. We believe that consumers deserve to know exactly what they're buying before they click "Add to Cart."
@@ -38,7 +38,7 @@ export default function About() {
                 whileHover={{ y: -5 }}
                 className="bg-white p-10 rounded-[2.5rem] shadow-sm border border-slate-100 text-center"
               >
-                <div className="w-16 h-16 bg-indigo-50 text-indigo-600 rounded-2xl flex items-center justify-center mx-auto mb-6">
+                <div className="w-16 h-16 bg-brand-secondary text-brand-primary rounded-2xl flex items-center justify-center mx-auto mb-6">
                   {item.icon}
                 </div>
                 <h3 className="text-xl font-bold text-slate-900 mb-4">{item.title}</h3>
@@ -61,7 +61,7 @@ export default function About() {
               <div key={i} className="text-center">
                 <img src={`https://picsum.photos/seed/team${i}/400/400`} className="w-48 h-48 rounded-full mx-auto mb-6 border-4 border-white/10" alt="Team Member" />
                 <h4 className="text-xl font-bold mb-1">Expert Reviewer {i}</h4>
-                <p className="text-indigo-400 text-sm font-medium uppercase tracking-widest">Tech Specialist</p>
+                <p className="text-brand-primary text-sm font-medium uppercase tracking-widest">Tech Specialist</p>
               </div>
             ))}
           </div>

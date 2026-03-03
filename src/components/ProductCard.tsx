@@ -13,29 +13,33 @@ interface ProductCardProps {
 export default function ProductCard({ product, featured = false }: ProductCardProps) {
   return (
     <motion.div
-      whileHover={{ y: -8 }}
+      initial={{ opacity: 0, y: 20 }}
+      whileInView={{ opacity: 1, y: 0 }}
+      viewport={{ once: true, margin: "-50px" }}
+      whileHover={{ y: -12, scale: 1.02 }}
+      transition={{ duration: 0.5, ease: [0.22, 1, 0.36, 1] }}
       className={cn(
-        "bg-white rounded-[2rem] overflow-hidden border border-slate-100 transition-all duration-500 group",
-        featured ? "shadow-hover ring-2 ring-indigo-500/10" : "shadow-soft hover:shadow-hover"
+        "bg-white rounded-[2.5rem] overflow-hidden border border-slate-100 transition-all duration-500 group",
+        featured ? "shadow-hover ring-2 ring-brand-accent/20" : "shadow-soft hover:shadow-hover"
       )}
     >
       <div className="relative aspect-[4/3] overflow-hidden">
         <img
           src={product.imageUrl}
-          alt={product.title}
-          className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
+          alt={`${product.title} - ${product.category} Review 2026`}
+          className="w-full h-full object-cover transition-transform duration-1000 group-hover:scale-110"
           referrerPolicy="no-referrer"
         />
         
         {/* Badges */}
         <div className="absolute top-4 left-4 flex flex-col gap-2">
           {product.isBestOverall && (
-            <div className="bg-indigo-600 text-white text-[10px] font-black uppercase tracking-widest px-3 py-1.5 rounded-lg shadow-lg backdrop-blur-md">
+            <div className="bg-brand-primary text-white text-[10px] font-black uppercase tracking-widest px-3 py-1.5 rounded-lg shadow-lg backdrop-blur-md">
               Best Overall
             </div>
           )}
           {product.isBestBudget && (
-            <div className="bg-emerald-500 text-white text-[10px] font-black uppercase tracking-widest px-3 py-1.5 rounded-lg shadow-lg backdrop-blur-md">
+            <div className="bg-brand-accent text-white text-[10px] font-black uppercase tracking-widest px-3 py-1.5 rounded-lg shadow-lg backdrop-blur-md">
               Best Value
             </div>
           )}
@@ -47,10 +51,10 @@ export default function ProductCard({ product, featured = false }: ProductCardPr
         </div>
 
         {/* Quick View Overlay */}
-        <div className="absolute inset-0 bg-slate-900/40 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center backdrop-blur-[2px]">
+        <div className="absolute inset-0 bg-brand-primary/60 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center backdrop-blur-[2px]">
           <Link 
             to={`/reviews/${product.slug}`}
-            className="bg-white text-slate-900 px-6 py-3 rounded-2xl font-black text-sm shadow-2xl transform translate-y-4 group-hover:translate-y-0 transition-transform duration-300 flex items-center gap-2"
+            className="bg-brand-accent text-white px-6 py-3 rounded-2xl font-black text-sm shadow-2xl transform translate-y-4 group-hover:translate-y-0 transition-transform duration-300 flex items-center gap-2"
           >
             Read Full Review
             <ArrowRight size={16} />
@@ -66,7 +70,7 @@ export default function ProductCard({ product, featured = false }: ProductCardPr
                 key={i}
                 size={14}
                 className={cn(
-                  i < Math.floor(product.rating) ? "text-yellow-400 fill-yellow-400" : "text-slate-200"
+                  i < Math.floor(product.rating) ? "text-brand-accent fill-brand-accent" : "text-slate-200"
                 )}
               />
             ))}
@@ -74,12 +78,12 @@ export default function ProductCard({ product, featured = false }: ProductCardPr
               {product.reviewCount.toLocaleString()} Reviews
             </span>
           </div>
-          <div className="text-[10px] font-black text-indigo-600 uppercase tracking-widest bg-indigo-50 px-2 py-1 rounded-md">
+          <div className="text-[10px] font-black text-brand-primary uppercase tracking-widest bg-brand-accent/10 px-2 py-1 rounded-md">
             {product.subCategory}
           </div>
         </div>
 
-        <h3 className="text-xl font-black text-slate-900 mb-3 line-clamp-2 leading-tight group-hover:text-indigo-600 transition-colors">
+        <h3 className="text-xl font-black text-brand-primary mb-3 line-clamp-2 leading-tight group-hover:text-brand-accent transition-colors">
           <Link to={`/reviews/${product.slug}`}>{product.title}</Link>
         </h3>
 
@@ -92,7 +96,7 @@ export default function ProductCard({ product, featured = false }: ProductCardPr
             href={cloakLink(product.amazonUrl)}
             target="_blank"
             rel="noopener noreferrer"
-            className="flex-1 bg-slate-900 text-white py-4 rounded-2xl text-xs font-black uppercase tracking-widest flex items-center justify-center gap-2 hover:bg-indigo-600 transition-all active:scale-95 shadow-xl shadow-slate-200"
+            className="flex-1 bg-brand-primary text-white py-4 rounded-2xl text-xs font-black uppercase tracking-widest flex items-center justify-center gap-2 hover:bg-brand-accent transition-all active:scale-95 shadow-xl shadow-brand-primary/10"
           >
             Buy on Amazon
             <ExternalLink size={14} />
