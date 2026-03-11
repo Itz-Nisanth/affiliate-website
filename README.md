@@ -44,4 +44,4 @@ Affiliate Website is a modern, high-performance **React + Vite + TypeScript** ap
 
 ```bash
 npm install
-npm run dev
+npm run
